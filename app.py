@@ -1,4 +1,7 @@
 from banking_pkg import account
+import random
+
+balance = 0
 
 
 def atm_menu(name):
@@ -16,7 +19,6 @@ def atm_menu(name):
 print("=== Automated Teller Machine ===")
 name = input("Enter name to register:")
 pin = input("Enter PIN:")
-balance = 0
 print(name, "has been registered with a starting balance of: $", balance)
 
 while True:
@@ -35,7 +37,6 @@ while True:
         account.show_balance(balance)
     elif option == "2":
         deposit = account.deposit(balance)
-        print(balance)
     elif option == "3":
         withdraw = account.withdraw(balance)
         balance = balance - withdraw
